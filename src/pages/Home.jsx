@@ -59,7 +59,7 @@ export default function Home() {
               découvre ce qu'on sait faire.
             </p>
             <div className="hero__actions">
-              <a href="#programmes" className="btn btn--filled-light">Découvrir nos programmes</a>
+              <Link to="/a-propos#decouvrir" className="btn btn--filled-light">Découvrir</Link>
               <a href="#" className="btn btn--outline-light">Devenir mentor</a>
             </div>
           </div>

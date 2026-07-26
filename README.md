@@ -1,6 +1,6 @@
 # Stand Up Wak'Up — Site (React)
 
-Homepage + page Événements — Agenda, en React + Vite, fidèle à la maquette Figma.
+Homepage + page Événements — Agenda + groupe de pages À propos, en React + Vite, fidèle à la maquette Figma.
 
 ## Démarrer en local
 
@@ -29,8 +29,14 @@ src/
   pages/
     Home.jsx        — homepage
     Evenements.jsx  — page Événements — Agenda (filtres + 5 popups)
+    APropos.jsx     — groupe de pages À propos (Découvrir, podcast, job, presse)
+    MediaLab.jsx    — page MediaLab reliée depuis le menu À propos
   styles.css        — design tokens (couleurs, typo Archivo/Bebas Neue, responsive)
 ```
+
+## Navigation À propos
+
+Le lien « À propos » ouvre un menu au survol ou au clavier avec cinq cartes : Découvrir, Le podcast, Le job, Pôle presse et MediaLab. La page À propos utilise une navigation secondaire à gauche et un traitement éditorial blanc / noir.
 
 ## À faire ensuite
 
