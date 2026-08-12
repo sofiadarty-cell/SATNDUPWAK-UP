@@ -1,16 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, useId, useRef } from 'react';
 
 export default function Modal({ isOpen, onClose, dateBadge, status, title, description, ctaLabel, ctaHref = '#' }) {
-  const titleId = `modal-title-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+  const titleId = useId();
+  const closeButtonRef = useRef(null);
 
   useEffect(() => {
     if (!isOpen) return;
+
+    const previousActiveElement = document.activeElement;
+
     document.body.style.overflow = 'hidden';
     const onKeyDown = (e) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKeyDown);
+    closeButtonRef.current?.focus();
+
     return () => {
       document.body.style.overflow = '';
       document.removeEventListener('keydown', onKeyDown);
+      previousActiveElement?.focus?.();
     };
   }, [isOpen, onClose]);
 
@@ -32,7 +39,7 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
           <p>{description}</p>
           <div className="modal__actions">
             <a href={ctaHref} className="btn btn--filled-dark">{ctaLabel}</a>
-            <button className="modal__close-text" onClick={onClose}>Fermer</button>
+            <button ref={closeButtonRef} className="modal__close-text" onClick={onClose}>Fermer</button>
           </div>
         </div>
       </div>

@@ -93,13 +93,13 @@ export default function Home() {
           <p style={{ marginTop: 8 }}>Choisissez le parcours qui correspond à votre besoin aujourd'hui.</p>
           <div className="grid">
             {PROGRAMMES.map((p) => (
-              <a href="#" className="card-dark" key={p.title}>
+              <article className="card-dark" key={p.title}>
                 <div className="placeholder-img" style={{ aspectRatio: '4/3', borderRadius: 8, marginBottom: 8 }} />
                 <span className="eyebrow">{p.eyebrow}</span>
                 <h3>{p.title}</h3>
                 <p>{p.desc}</p>
                 <span className="link-arrow">{p.link}</span>
-              </a>
+              </article>
             ))}
           </div>
         </div>
