@@ -57,7 +57,7 @@ export default function APropos() {
                 <h3>Une association<br />née d'une<br />conviction</h3>
                 <p>Créer un espace où chacun peut reprendre confiance, trouver sa place et transformer une idée en projet. Ici viendra le récit fondateur de Stand Up Wak'Up.</p>
               </div>
-              <div className="about-video" role="img" aria-label="Vidéo de présentation à intégrer">
+              <div className="about-video" role="group" aria-label="Vidéo de présentation à intégrer">
                 <div className="about-video__meta">Stand Up Wak'Up Original Tape · 00:00 / 06:30</div>
                 <button className="about-video__play" aria-label="Lire la vidéo">▶</button>
                 <div className="about-video__caption">▶ La fondatrice raconte la création de l'association</div>
