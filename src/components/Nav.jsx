@@ -21,21 +21,23 @@ export default function Nav() {
         <li><a href="#">Histoires</a></li>
         <li className="nav__about">
           <Link to="/a-propos#decouvrir" className="nav__about-trigger">À propos</Link>
-          <div className="nav__about-menu" role="menu" aria-label="Pages À propos">
+          <nav className="nav__about-menu" aria-label="Pages À propos">
             <div className="nav__about-intro">
               <span className="eyebrow">À propos</span>
               <p>Une association, cinq façons de découvrir son histoire et ses voix.</p>
             </div>
-            <div className="nav__about-grid">
+            <ul className="nav__about-grid">
               {ABOUT_ITEMS.map((item) => (
-                <Link to={item.to} className="nav-card" role="menuitem" key={item.title}>
-                  <span className={`nav-card__image nav-card__image--${item.tone}`} aria-hidden="true" />
-                  <span className="nav-card__title">{item.title}</span>
-                  <span className="nav-card__label">{item.label}</span>
-                </Link>
+                <li key={item.title}>
+                  <Link to={item.to} className="nav-card">
+                    <span className={`nav-card__image nav-card__image--${item.tone}`} aria-hidden="true" />
+                    <span className="nav-card__title">{item.title}</span>
+                    <span className="nav-card__label">{item.label}</span>
+                  </Link>
+                </li>
               ))}
-            </div>
-          </div>
+            </ul>
+          </nav>
         </li>
       </ul>
       <div className="nav__actions">
