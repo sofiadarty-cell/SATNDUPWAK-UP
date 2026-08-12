@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bebas+Neue&family=Playfair+Display:ital@1&display=swap');
+:root{--black:#060606;--cream:#fafaf6;--white:#fff;--pink:#f037a5;--blue:#1115d9;--green:#c7ff3b;--gold:#b99045}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:#111;font-family:Archivo,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.site-header{min-height:142px;background:var(--black);color:white;display:grid;grid-template-columns:150px 1fr;align-items:center;gap:10px 32px;padding:20px 48px;position:relative;z-index:20}
+.logo{width:150px;height:64px;display:grid;place-items:center}
+.logo span{font:28px/.78 'Bebas Neue';letter-spacing:.04em;text-align:center}
+.main-nav{display:flex;align-items:center;gap:20px;font-size:12px;font-weight:600;text-transform:uppercase}
+.main-nav>*,.nav-group>button{background:none;border:0;color:white;cursor:pointer;padding:12px 0;white-space:nowrap}
+.nav-group{position:relative}
+.mega{position:absolute;top:42px;left:-18px;background:white;color:#060606;width:320px;padding:14px;box-shadow:0 18px 40px #0003;display:grid}
+.mega a{padding:14px;display:flex;justify-content:space-between;border-bottom:1px solid #ddd}
+.mega a:hover{background:var(--cream)}
+.header-actions{grid-column:1/-1;display:flex;gap:8px}
+.header-actions a,.buttons a{border:1px solid currentColor;border-radius:28px;padding:12px 18px;font-size:12px;font-weight:700;text-transform:uppercase}
+.mobile-menu{display:none}
+.dark{background:var(--black);color:white}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:80px 24px;min-height:700px}
+.hero>div{align-self:center}
+.hero h1,.page-hero h1{font:400 clamp(3.6rem,6vw,7rem)/.92 'Bebas Neue';margin:22px 0;max-width:660px;letter-spacing:.01em}
+.hero p{font-size:19px;line-height:1.6;max-width:680px}
+.hero-media{width:100%;height:540px;border-radius:32px;background:linear-gradient(135deg,#222,#555);display:grid;place-items:center;color:#aaa;font-weight:700}
+.buttons{display:flex;gap:14px;margin-top:24px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);padding:40px 24px}
+.stats div{display:grid;gap:8px}
+.stats strong{font:30px 'Bebas Neue'}
+.stats span{font-size:14px}
+.testimonial{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:64px 24px;gap:70px;background:white}
+.portrait{width:100%;height:300px;background:linear-gradient(135deg,#eee,#aaa)}
+.testimonial blockquote{font:italic 35px/1.45 'Playfair Display';margin:0}
+.testimonial p{font:38px/1.1 'Bebas Neue'}
+.section{padding:70px 24px;max-width:1440px;margin:auto}
+.section h2,.feature h2,.cta h2{font:clamp(2.4rem,4vw,4.5rem)/1 'Bebas Neue';margin:0 0 30px}
+.lead{font-size:22px;line-height:1.6;max-width:900px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card,.event{border:1px solid #111;padding:28px;min-height:260px;background:var(--cream)}
+.card h3,.event h3{font:32px 'Bebas Neue';margin:22px 0 14px}
+.card p{line-height:1.6}
+.feature{display:grid;grid-template-columns:45% 55%;align-items:center;background:white;padding:60px 24px}
+.digitalents-media{width:100%;height:380px;background:linear-gradient(135deg,var(--blue),var(--pink))}
+.feature>div{padding:50px}
+.feature strong{display:inline-block;background:var(--cream);padding:18px 35px;font:32px 'Bebas Neue'}
+.cta{padding:56px 24px;background:var(--black);color:white;text-align:center}
+.cta a{display:inline-block;margin:8px 14px;border-bottom:1px solid}
+.page-hero{padding:62px 6.7%;min-height:300px;background:var(--black);color:white}
+.page-hero p{font-size:24px;max-width:700px}
+.page-hero.studio{background:var(--blue);color:white}
+.page-hero.studio h1,.page-hero.studio p{color:#fb8ef8}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.media-placeholder,.event-visual{min-height:360px;background:linear-gradient(135deg,#ddd,#aaa);display:grid;place-items:center;font-weight:700}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{border:1px solid;background:transparent;border-radius:24px;padding:10px 18px;cursor:pointer}
+.filters .active{background:#111;color:white}
+.event{padding:0 0 24px}
+.event>*:not(.event-visual){margin-left:20px;margin-right:20px}
+.event-visual{min-height:240px;margin-bottom:20px;background:linear-gradient(135deg,var(--blue),var(--pink))}
+.primary{display:inline-block;margin-top:28px;background:#111;color:white;padding:16px 22px;border-radius:28px}
+.services .card:nth-child(odd){background:var(--black);color:white}
+.products .product{height:260px;background:var(--green)}
+.products .p1{background:var(--pink)}
+.products .p2{background:var(--blue)}
+.notice{margin-top:30px;padding:18px;border-left:5px solid var(--pink)}
+footer{background:white;padding:48px}
+.footer-logo{display:inline-block;font:34px/.8 'Bebas Neue';letter-spacing:.04em}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:30px}
+.footer-grid div{display:flex;flex-direction:column;gap:12px}
+.footer-grid h3{font:30px 'Bebas Neue';margin:0 0 10px}
+.signature{border-top:1px solid;padding-top:25px;margin-top:35px;font-weight:700}
+
+@media(max-width:900px){.site-header{height:88px;min-height:88px;padding:12px;grid-template-columns:90px 1fr 105px}
+.logo{width:auto;height:64px;grid-column:2}
+.mobile-menu{display:block;background:none;border:0;color:white;font-size:12px}
+.main-nav{display:none;position:absolute;top:88px;left:0;right:0;background:#060606;padding:18px;flex-direction:column;align-items:stretch}
+.main-nav.open{display:flex}
+.nav-group>button{width:100%;text-align:left}
+.mega{position:static;width:100%;box-shadow:none}
+.header-actions{grid-column:3;grid-row:1}
+.header-actions a{display:none}
+.header-actions a:first-child{display:block;text-align:center;padding:10px 8px;font-size:10px}
+.hero{grid-template-columns:1fr;padding:64px 24px}
+.hero h1{font-size:56px}
+.hero img{height:420px}
+.stats,.testimonial,.cards,.feature,.split,.footer-grid{grid-template-columns:1fr}
+.stats{grid-template-columns:1fr 1fr;gap:35px}
+.testimonial{gap:30px}
+.feature>div{padding:35px 0}
+.feature{padding:45px 24px}
+.page-hero{min-height:310px;padding:55px 24px}
+.page-hero h1{font-size:64px}
+.footer-grid{gap:36px}
+.services,.products{grid-template-columns:1fr}
+}
