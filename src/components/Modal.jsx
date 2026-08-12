@@ -3,7 +3,6 @@ import { useEffect, useId, useRef } from 'react';
 export default function Modal({ isOpen, onClose, dateBadge, status, title, description, ctaLabel, ctaHref = '#' }) {
   const titleId = useId();
   const modalRef = useRef(null);
-  const closeButtonRef = useRef(null);
   const onCloseRef = useRef(onClose);
 
   useEffect(() => {
@@ -42,7 +41,7 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
       }
     };
     document.addEventListener('keydown', onKeyDown);
-    const focusTimeout = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
+    const focusTimeout = window.setTimeout(() => modalRef.current?.focus(), 0);
 
     return () => {
       document.body.style.overflow = '';
@@ -59,7 +58,7 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
       className="modal-overlay is-open"
       onClick={(e) => { if (e.target === e.currentTarget) onCloseRef.current(); }}
     >
-      <div ref={modalRef} className="modal" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+      <div ref={modalRef} className="modal" role="dialog" aria-modal="true" aria-labelledby={titleId} tabIndex={-1}>
         <div className="modal__image placeholder-img" />
         <div className="modal__body">
           <div className="modal__badges">
@@ -70,7 +69,7 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
           <p>{description}</p>
           <div className="modal__actions">
             <a href={ctaHref} className="btn btn--filled-dark">{ctaLabel}</a>
-            <button ref={closeButtonRef} className="modal__close-text" onClick={onClose}>Fermer</button>
+            <button className="modal__close-text" onClick={onClose}>Fermer</button>
           </div>
         </div>
       </div>

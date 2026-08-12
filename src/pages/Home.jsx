@@ -110,12 +110,12 @@ export default function Home() {
           <h2>Il n'y a pas une seule façon de passer à l'action.</h2>
           <div className="grid grid--3">
             {PARCOURS.map((p) => (
-              <a href="#" className="card-profile" key={p.num}>
+              <article className="card-profile" key={p.num}>
                 <span className="eyebrow-num">{p.num}</span>
                 <h3>{p.title}</h3>
                 <p>{p.desc}</p>
                 <span className="link-arrow">Commencer →</span>
-              </a>
+              </article>
             ))}
           </div>
         </div>
