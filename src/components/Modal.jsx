@@ -4,6 +4,11 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
   const titleId = useId();
   const modalRef = useRef(null);
   const closeButtonRef = useRef(null);
+  const onCloseRef = useRef(onClose);
+
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -13,7 +18,7 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
     document.body.style.overflow = 'hidden';
     const onKeyDown = (e) => {
       if (e.key === 'Escape') {
-        onClose();
+        onCloseRef.current();
         return;
       }
 
@@ -45,14 +50,14 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
       window.clearTimeout(focusTimeout);
       previousActiveElement?.focus?.();
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
     <div
       className="modal-overlay is-open"
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      onClick={(e) => { if (e.target === e.currentTarget) onCloseRef.current(); }}
     >
       <div ref={modalRef} className="modal" role="dialog" aria-modal="true" aria-labelledby={titleId}>
         <div className="modal__image placeholder-img" />

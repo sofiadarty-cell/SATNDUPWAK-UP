@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const menuId = 'nav-menu';
 
   return (
     <nav className={`nav${open ? ' is-open' : ''}`} aria-label="Menu principal">
       <Link to="/" className="nav__logo">Standup<br />Wakup</Link>
-      <ul className="nav__links">
+      <ul id={menuId} className="nav__links">
         <li><Link to="/#programmes">Programmes</Link></li>
         <li><Link to="/evenements">Événements</Link></li>
         <li><a href="#">Histoires</a></li>
@@ -20,6 +21,7 @@ export default function Nav() {
       </div>
       <button
         className="nav__toggle"
+        aria-controls={menuId}
         aria-expanded={open}
         aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
         onClick={() => setOpen(o => !o)}
