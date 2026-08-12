@@ -5,7 +5,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className={`nav${open ? ' is-open' : ''}`}>
+    <nav className={`nav${open ? ' is-open' : ''}`} aria-label="Menu principal">
       <Link to="/" className="nav__logo">Standup<br />Wakup</Link>
       <ul className="nav__links">
         <li><Link to="/#programmes">Programmes</Link></li>
