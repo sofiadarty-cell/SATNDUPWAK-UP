@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 
 export default function Modal({ isOpen, onClose, dateBadge, status, title, description, ctaLabel, ctaHref = '#' }) {
+  const titleId = `modal-title-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
   useEffect(() => {
     if (!isOpen) return;
     document.body.style.overflow = 'hidden';
@@ -19,14 +21,14 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
       className="modal-overlay is-open"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="modal" role="dialog" aria-modal="true" aria-label={title}>
+      <div className="modal" role="dialog" aria-modal="true" aria-labelledby={titleId}>
         <div className="modal__image placeholder-img" />
         <div className="modal__body">
           <div className="modal__badges">
             <span className="modal__date-badge">{dateBadge}</span>
             {status && <span className="modal__status">{status}</span>}
           </div>
-          <h2>{title}</h2>
+          <h2 id={titleId}>{title}</h2>
           <p>{description}</p>
           <div className="modal__actions">
             <a href={ctaHref} className="btn btn--filled-dark">{ctaLabel}</a>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
-import EventCard from '../components/EventCard.jsx';
 
 const PROGRAMMES = [
   {
