@@ -42,12 +42,14 @@ export default function APropos() {
 
         <main className="about-content">
           <section className="about-section" id="decouvrir">
-            <div className="about-tabs" role="tablist" aria-label="Découvrir Stand Up Wak'Up">
-              <a href="#histoire">Histoire</a>
-              <a href="#why">Notre why</a>
-              <a href="#coulisses">Coulisses</a>
-              <a href="#equipe">Équipe</a>
-            </div>
+            <nav className="about-tabs" aria-label="Découvrir Stand Up Wak'Up">
+              <ul>
+                <li><a href="#histoire">Histoire</a></li>
+                <li><a href="#why">Notre why</a></li>
+                <li><a href="#coulisses">Coulisses</a></li>
+                <li><a href="#equipe">Équipe</a></li>
+              </ul>
+            </nav>
             <h2>Rembobiner pour<br />comprendre</h2>
             <div className="about-intro" id="histoire">
               <div className="about-intro__copy">
