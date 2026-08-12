@@ -12,11 +12,12 @@ export default function Modal({ isOpen, onClose, dateBadge, status, title, descr
     document.body.style.overflow = 'hidden';
     const onKeyDown = (e) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKeyDown);
-    closeButtonRef.current?.focus();
+    const focusTimeout = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
 
     return () => {
       document.body.style.overflow = '';
       document.removeEventListener('keydown', onKeyDown);
+      window.clearTimeout(focusTimeout);
       previousActiveElement?.focus?.();
     };
   }, [isOpen, onClose]);

@@ -24,7 +24,7 @@ export default function Nav() {
         aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
         onClick={() => setOpen(o => !o)}
       >
-        ☰
+        <span aria-hidden="true">☰</span>
       </button>
     </nav>
   );
